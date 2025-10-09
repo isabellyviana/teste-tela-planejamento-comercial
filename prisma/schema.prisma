@@ -13,3 +13,17 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Cadastro {
+  codigo  String  @id
+  descricao String
+  categoria String
+  provedor String
+  abstecedor String
+  fornecedor String
+  comprador String
+}
+
+model Saldo {}
+
+model Previsao {}

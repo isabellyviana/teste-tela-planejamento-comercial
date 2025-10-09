@@ -1,3 +1,3 @@
-import fastify from 'fastify'
+import Express from 'express';
 
-export const app = fastify();
+export const app = Express();

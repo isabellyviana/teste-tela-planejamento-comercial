@@ -1,9 +1,5 @@
-import { app } from "./app";
+import { app } from './app.js';
 
-app.listen({
-host: '0.0.0.0',
-port: 3333
-
-}).then(()=>{
-    console.log("servidor no ar ")
+app.listen(3333, () => {
+  console.log('Servidor rodando em http://localhost:3000')
 })
