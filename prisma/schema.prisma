@@ -22,8 +22,29 @@ model Cadastro {
   abstecedor String
   fornecedor String
   comprador String
+  saldos Saldo[]
+  previsoes Previsao[]
 }
 
-model Saldo {}
+model Saldo {
+  codigo String @id
+  filial String
+  estoque_livre Int
+  bloqueio Int
+  reserva Int
+  em_transito Int
+  PO Int
+  codigoId String
+  cadastro_ Cadastro@relation(fields: [codigoId], references: [codigo])
+  
+}
 
-model Previsao {}
+model Previsao {
+  codigo String @id
+  filial String
+  emissao DateTime
+  previsao DateTime
+  pedido String
+  codigoId String
+  cadastro_ Cadastro@relation(fields: [codigoId], references: [codigo])
+}
